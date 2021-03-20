@@ -1,16 +1,17 @@
 var express = require('express');
 var router = express.Router();
-var axios = require('axios');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('index');
 });
 
 router.get('/register', function(req,res) {
-  res.render('register', {user: "", email: ""})
+  res.render('register')
 })
 
-
+router.get('/dashboard',(req,res)=>{
+  res.render('dashboard');
+})
 
 module.exports = router;
