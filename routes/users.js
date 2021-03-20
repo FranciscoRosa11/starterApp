@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const User = require("../models/user.js")
 var bcrypt = require('bcrypt');
+const passport = require('passport');
 
 //login handle
 router.get('/login',(req,res)=>{
@@ -81,5 +82,9 @@ router.post('/login',(req,res,next)=>{
 
 //logout
 router.get('/logout',(req,res)=>{
- })
+  req.logout();
+  req.flash('success_msg','Now logged out');
+  res.redirect('/users/login');
+})
+
 module.exports  = router;
