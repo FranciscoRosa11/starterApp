@@ -1,0 +1,52 @@
+<h1>Manage your settings</h1>
+<p> Reminder: You can't change your personal name!</p>
+<%- include ('./partials/messages') %>
+<form action="/dashboard/manage" method="POST">
+    <div>
+        <p>
+            <label for="email">New email:</label>
+            <input
+                type="email"
+                name="email"
+                placeholder="Enter your new email"
+                value="<%= typeof email != 'undefined' ? email : '' %>"
+            />
+            <button type="submit" name="update" value="updateEmail" class="btn btn-primary btn-block">
+                Update
+            </button>
+        </p>
+        <p>
+            <label for="age">Enter your new age</label>
+            <input
+                type="age"
+                name="age"
+                placeholder="Enter your new age"
+                value="<%= typeof age != 'undefined' ? age : '' %>"
+            />
+            <button type="submit" name="update" value="updateAge" class="btn btn-primary btn-block">
+                Update
+            </button>
+        </p>
+        <p>
+            <label for="password">Password</label>
+            <input
+                type="password"
+                name="password"
+                placeholder="Enter your new password"
+                value="<%= typeof password != 'undefined' ? password : '' %>"
+            />
+        </p>
+        <p>
+            <label for="password">Confirm Password</label>
+            <input
+                type="password"
+                name="password2"
+                placeholder="Confirm your new password"
+                value="<%= typeof password2 != 'undefined' ? password2 : '' %>"
+            />
+            <button type="submit" name="update" value="updatePassword" class="btn btn-primary btn-block">
+                Update
+            </button>
+        </p>
+    </div>
+</form>

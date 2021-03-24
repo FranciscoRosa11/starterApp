@@ -1,3 +1,8 @@
 <h1>Dashboard</h1>
 <p> Welcome <%= user.name %></p>
-<a href="/users/logout">Logout</a>
+<p> Check out your personal information below!</p>
+<p> Email: <%= user.email %></p>
+<p> Age: <%= user.age %></p>
+<p> Gender: <%= user.gender %></p>
+<p><a href="/dashboard/manage">Manage your settings</a></p>
+<p><a href="/users/logout">Logout</a></p>

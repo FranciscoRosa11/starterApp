@@ -1,47 +1,79 @@
-<h1>
-  Register
-</h1>
+<!DOCTYPE html>
 <%- include ('./partials/messages') %>
-<form action="/users/register" method="POST">
-<div>
-    <label for="name">Name</label>
-    <input
-      type="name"
-      name="name"
-      placeholder="Enter Name"
-      value="<%= typeof name != 'undefined' ? name : '' %>"
-    />
-  
-</div>
-<div>
-    <label for="email">Email</label>
-    <input
-      type="email"
-      name="email"
-      placeholder="Enter Email"
-      value="<%= typeof email != 'undefined' ? email : '' %>"
-    />
-  </div>
-  <div >
-    <label for="password">Password</label>
-    <input
-      type="password"
-      name="password"
-      placeholder="Create Password"
-      value="<%= typeof password != 'undefined' ? password : '' %>"
-    />
-  </div>
-  <div >
-    <label for="password2">Confirm Password</label>
-    <input
-      type="password"
-      name="password2"
-      placeholder="Confirm Password"
-      value="<%= typeof password2 != 'undefined' ? password2 : '' %>"
-    />
-  </div>
-  <button type="submit" class="btn btn-primary btn-block">
-    Register
-  </button>
-</form>
-<p >Have An Account? <a href="/users/login">Login</a></p>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Register page</title>
+  </head>
+  <body>
+    <header>
+      <h1>Register</h1>
+    </header>
+    <section>
+      <form action="/users/register" method="POST">
+        <div>
+          <label for="name">Name</label>
+          <input
+            type="name"
+            name="name"
+            placeholder="Enter Name"
+            value="<%= typeof name != 'undefined' ? name : '' %>"
+          />
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input
+            type="email"
+            name="email"
+            placeholder="Enter Email"
+            value="<%= typeof email != 'undefined' ? email : '' %>"
+          />
+        </div>
+        <div >
+          <label for="age">Age</label>
+          <input
+            type="age"
+            name="age"
+            placeholder="Please enter your age"
+            value="<%= typeof age != 'undefined' ? age : '' %>"
+          />
+        </div>
+        <div >
+          <label for="gender">Please select your gender:</label>
+          <select name="gender" id="gender">
+            <option value="Female">Female</option>
+            <option value="Male">Male</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div >
+          <label for="password">Password</label>
+          <input
+            type="password"
+            name="password"
+            placeholder="Create Password"
+            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+            title="Deve conter pelo menos um número, uma letra maiúscula e uma minúscula e pelo menos oito ou mais carateres"
+            value="<%= typeof password != 'undefined' ? password : '' %>"
+          />
+        </div>
+        <div >
+          <label for="password2">Confirm Password</label>
+          <input
+            type="password"
+            name="password2"
+            placeholder="Confirm Password"
+            value="<%= typeof password2 != 'undefined' ? password2 : '' %>"
+          />
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">
+          Register
+        </button>
+      </form>
+      <p >Have An Account? <a href="/users/login">Login</a></p>
+    </section>
+    <footer>
+      <p>Po caralho</p>
+    </footer>
+  </body>
+</html>
