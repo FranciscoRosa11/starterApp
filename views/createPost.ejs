@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<%- include ('./partials/messages') %>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Create post</title>
+  </head>
+  <body>
+    <header>
+      <h1>Create your post here</h1>
+    </header>
+    <section>
+      <form action="/users/post" method="POST" id="postArea">
+        <div>
+          <label for="title">Title</label>
+          <input
+            type="title"
+            name="title"
+            value="<%= typeof title != 'undefined' ? title : '' %>"
+          />
+        </div>
+        <div>
+          <label for="body">Text</label>
+          <textarea rows="5" cols="80" id="body" form="postArea"></textarea>
+          <input type="submit" value="Send"><INPUT type="reset">
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">
+          Post
+        </button>
+      </form>
+    </section>
+    <footer>
+      <p>Po caralho</p>
+    </footer>
+  </body>
+</html>

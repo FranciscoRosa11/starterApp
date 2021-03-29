@@ -11,6 +11,13 @@ router.get('/login',(req,res)=>{
 router.get('/register',(req,res)=>{
     res.render('register')
 })
+router.get('/post', (req,res) => {
+    res.render('createPost')
+})
+router.post('/post', (req,res) => {
+    const {title, body} = req.body;
+    console.log(req.body);
+})
 //Register handle
 router.post('/register',(req,res)=>{
   const {name,email, age, gender, password, password2} = req.body;
